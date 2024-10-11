@@ -6,6 +6,10 @@ return {
 			require("mason").setup()
 		end,
 	},
+  {
+    "towolf/vim-helm",
+    ft = 'helm'
+  },
 	{
 		"williamboman/mason-lspconfig.nvim",
 		lazy = false,
@@ -62,6 +66,16 @@ return {
 			lspconfig.pyright.setup({
 				capabilities = capabilities,
 			})
+      lspconfig.helm_ls.setup({
+        capabilities = capabilities,
+        settings = {
+          ['helm-ls'] = {
+            yamlls = {
+              path = "yaml-language-server"
+            }
+          }
+        }
+      })
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
