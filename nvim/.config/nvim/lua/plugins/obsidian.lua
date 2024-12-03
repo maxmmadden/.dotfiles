@@ -17,6 +17,30 @@ return {
         name = "Personal",
         path = "~/Documents/PersonalVault",
       },
+      {
+        name = "TheStratbook",
+        path = "~/Documents/work/TheStratbook",
+        overrides = {
+          notes_subdir = "03 - Content",
+          templates = {
+            folder = "04 - Templates",
+            date_format = "%Y-%m-%d-%a",
+            time_format = "%H:%M",
+          }
+        },
+      },
+      {
+        name = "SecondBrain",
+        path = "~/Documents/personal/SecondBrain",
+        overrides = {
+          notes_subdir = "Zettlekasten",
+          templates = {
+            folder = "Templates",
+            date_format = "%Y-%m-%d-%a",
+            time_format = "%H:%M",
+          }
+        },
+      },
     },
     notes_subdir = "notes",
     new_notes_location = "notes_subdir",

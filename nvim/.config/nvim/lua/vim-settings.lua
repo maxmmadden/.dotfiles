@@ -6,7 +6,12 @@ vim.g.mapleader = " "
 vim.g.background = "light"
 
 vim.opt.swapfile = false
+vim.opt.relativenumber = true
 
+vim.keymap.set('n', '<left>', '<Nop>' )
+vim.keymap.set('n', '<right>', '<Nop>' )
+vim.keymap.set('n', '<up>', '<Nop>' )
+vim.keymap.set('n', '<down>', '<Nop>' )
 -- Navigate vim panes better
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
 vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')

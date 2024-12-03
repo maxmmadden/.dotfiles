@@ -3,6 +3,7 @@
 # ------------- Env Variables -------------
 
 export WORK="$HOME/Documents/work"
+export PERSONAL="$HOME/Documents/personal/"
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$HOME/go/bin"
@@ -16,7 +17,7 @@ alias n="nvim"
 alias config="cd '$HOME/.config'"
 alias ow="cd $WORKVAULT"
 alias op="cd $HOME/Documents/PersonalVault"
-
+alias personal='cd $PERSONAL'
 #Kubectl
 
 alias k='kubectl'
@@ -100,3 +101,9 @@ alias gg="go get ./..."
 # Tmuxifier 
 
 alias tld="tmuxifier load-window deployment-window"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
