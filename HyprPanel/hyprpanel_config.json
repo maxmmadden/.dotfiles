@@ -1,0 +1,41 @@
+{
+  "bar.customModules.updates.pollingInterval": 1440000,
+  "theme.bar.floating": false,
+  "theme.bar.buttons.enableBorders": false,
+  "menus.bluetooth.batteryState": "connected",
+  "menus.bluetooth.showBattery": false,
+  "theme.bar.menus.menu.bluetooth.scaling": 100,
+  "theme.bar.menus.menu.volume.scaling": 95,
+  "theme.bar.border.location": "none",
+  "theme.bar.buttons.workspaces.enableBorder": false,
+  "bar.workspaces.show_numbered": true,
+  "bar.workspaces.showWsIcons": false,
+  "theme.bar.buttons.workspaces.smartHighlight": true,
+  "tear": false,
+  "bar.layouts": {
+    "*": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "windowtitle"
+      ],
+      "middle": [
+        "media"
+      ],
+      "right": [
+        "volume",
+        "network",
+        "bluetooth",
+        "battery",
+        "systray",
+        "clock",
+        "notifications"
+      ]
+    }
+  },
+  "theme.bar.transparent": true,
+  "theme.bar.buttons.monochrome": false,
+  "theme.bar.opacity": 100,
+  "theme.bar.buttons.background_hover_opacity": 100,
+  "bar.launcher.icon": ""
+}
