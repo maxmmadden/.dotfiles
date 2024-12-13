@@ -6,10 +6,10 @@ return {
 			require("mason").setup()
 		end,
 	},
-  {
-    "towolf/vim-helm",
-    ft = 'helm'
-  },
+	{
+		"towolf/vim-helm",
+		ft = "helm",
+	},
 	{
 		"williamboman/mason-lspconfig.nvim",
 		lazy = false,
@@ -25,7 +25,7 @@ return {
 
 			local lspconfig = require("lspconfig")
 
-      local util = require("lspconfig.util")
+			local util = require("lspconfig.util")
 
 			lspconfig.tsserver.setup({
 				capabilities = capabilities,
@@ -66,24 +66,45 @@ return {
 			lspconfig.pyright.setup({
 				capabilities = capabilities,
 			})
-      lspconfig.helm_ls.setup({
-        capabilities = capabilities,
-        settings = {
-          ['helm-ls'] = {
-            yamlls = {
-              path = "yaml-language-server"
-            }
-          }
-        }
-      })
+			lspconfig.helm_ls.setup({
+				capabilities = capabilities,
+				settings = {
+					["helm-ls"] = {
+						yamlls = {
+							path = "yaml-language-server",
+						},
+					},
+				},
+			})
+
+			lspconfig.rust_analyzer.setup({
+				capabilities = capabilities,
+				settings = {
+					["rust-analyzer"] = {
+						imports = {
+							granularity = {
+								group = "module",
+							},
+							prefix = "self",
+						},
+						cargo = {
+							buildScripts = {
+								enable = true,
+							},
+						},
+						procMacro = {
+							enable = true,
+						},
+					},
+				},
+			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
 
-
-      vim.api.nvim_create_autocmd("BufWritePre", {
+			vim.api.nvim_create_autocmd("BufWritePre", {
 				pattern = "*.go",
 				callback = function()
 					local params = vim.lsp.util.make_range_params()
@@ -98,8 +119,33 @@ return {
 						end
 					end
 					vim.lsp.buf.format({ async = false })
-				end
+				end,
 			})
 		end,
+	},
+	{
+		"simrat39/rust-tools.nvim",
+		lazy = false,
+		config = function()
+			require("rust-tools").setup({
+				tools = {
+					runnable = {
+						use_telescope = true,
+					},
+					inlay_hints = {
+						auto = true,
+						show_parameter_hints = false,
+						parameter_hints_prefix = "",
+						other_hints_prefix = "",
+					},
+				},
+			})
+		end,
+	},
+	{
+		"numToStr/Comment.nvim",
+		opts = {
+			-- add any options here
+		},
 	},
 }
