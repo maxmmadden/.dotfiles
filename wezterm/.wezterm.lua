@@ -30,4 +30,11 @@ config.keys = {
 	},
 }
 
+config.set_environment_variables = {
+	WEZTERM_PROG = nil,
+	WEZTERM_USER = nil,
+	WEZTERM_IN_TMUX = nil,
+	WEZTERM_HOST = nil,
+}
+
 return config

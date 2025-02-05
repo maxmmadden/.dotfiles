@@ -21,8 +21,14 @@ vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 vim.wo.number = true
 
+-- Navigate buffers
+vim.keymap.set("n", "<leader>bp", ":bprev<CR>")
+vim.keymap.set("n", "<leader>bn", ":bnext<CR>")
+
 -- Obsidian Keymaps
 
 vim.keymap.set("n", "<leader>on", ":ObsidianNew<CR>")
 vim.keymap.set("n", "<leader>od", ":ObsidianDailies<CR>")
 vim.keymap.set("n", "<leader>ow", ":ObsidianWorkspace<CR>")
+
+vim.keymap.set("n", "<leader>ld", "<cmd>LazyDocker<CR>", { desc = "Toggle LazyDocker", noremap = true, silent = true })
