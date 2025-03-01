@@ -40,6 +40,10 @@ return {
 				capabilities = capabilities,
 			})
 
+      lspconfig.jinja_lsp.setup({
+        capabilities = capabilities,
+      })
+
 			lspconfig.gopls.setup({
 				capabilities = capabilities,
 				cmd = { "gopls" },
@@ -52,9 +56,17 @@ return {
 						analyses = {
 							unusedparams = true,
 						},
+            hints = {
+              assignVariableTypes = true,
+              compositeLiteralFields = true,
+              compositeLiteralTypes = true,
+              constantValues = true,
+              functionTypeParameters = true,
+              parameterNames = true,
+              rangeVariableTypes = true,
 					},
 				},
-			})
+			}})
 			lspconfig.yamlls.setup({
 				capabilities = capabilities,
 			})
@@ -102,6 +114,7 @@ return {
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+			vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, {})
 
 			vim.api.nvim_create_autocmd("BufWritePre", {
 				pattern = "*.go",
