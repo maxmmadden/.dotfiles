@@ -116,6 +116,14 @@ return {
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
 			vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, {})
 
+
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        callback = function()
+            vim.lsp.buf.format { async = false }
+        end
+      })
+
+
 			vim.api.nvim_create_autocmd("BufWritePre", {
 				pattern = "*.go",
 				callback = function()
