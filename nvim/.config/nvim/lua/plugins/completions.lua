@@ -3,7 +3,7 @@ return {
     "saghen/blink.cmp",
     dependencies = { "rafamadriz/friendly-snippets" },
 
-    version = "*",
+    version = "1.*",
     opts = {
       keymap = { preset = "super-tab" },
 
@@ -11,7 +11,7 @@ return {
         nerd_font_variant = "mono",
       },
 
-      completion = { documentation = { auto_show = false } },
+      completion = { documentation = { auto_show = false }, menu = { draw = { columns = { { "kind" }, { "label", "label_description", gap = 1 } } } } },
 
       signature = { enabled = true },
       fuzzy = { implementation = "prefer_rust_with_warning" },
