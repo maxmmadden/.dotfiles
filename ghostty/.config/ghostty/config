@@ -46,3 +46,7 @@ window-padding-x = 10,10
 
 keybind = ctrl+shift+,=unbind
 keybind = ctrl+g>r=reload_config
+
+cursor-style = bar
+shell-integration-features = no-cursor
+mouse-hide-while-typing = true
