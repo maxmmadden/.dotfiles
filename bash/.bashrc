@@ -66,7 +66,7 @@ fi
 export KUBECONFIG=${KUBECONFIG%:}
 
 
-eval "$(tmuxifier init -)"
+# eval "$(tmuxifier init -)"
 eval "$(starship init bash)"
 
 # >>> conda initialize >>>
@@ -102,7 +102,7 @@ alias gg="go get ./..."
 
 alias tld="tmuxifier load-window deployment-window"
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
