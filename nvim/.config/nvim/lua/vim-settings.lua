@@ -10,6 +10,9 @@ vim.opt.termguicolors = true
 vim.opt.swapfile = false
 vim.opt.relativenumber = true
 
+-- vim.opt.spelllang = "en"
+-- vim.opt.spell = true
+
 vim.keymap.set("n", "<left>", "<Nop>")
 vim.keymap.set("n", "<right>", "<Nop>")
 vim.keymap.set("n", "<up>", "<Nop>")
@@ -39,15 +42,15 @@ vim.keymap.set("n", "<leader>ow", ":ObsidianWorkspace<CR>")
 vim.keymap.set("n", "<leader>ld", "<cmd>LazyDocker<CR>", { desc = "Toggle LazyDocker", noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>i", function()
-  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ 0 }), { 0 })
+	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ 0 }), { 0 })
 end)
 
 vim.filetype.add({
-  extension = {
-    jinja = "jinja",
-    jinja2 = "jinja",
-    j2 = "jinja",
-  },
+	extension = {
+		jinja = "jinja",
+		jinja2 = "jinja",
+		j2 = "jinja",
+	},
 })
 
 vim.keymap.set("n", "<esc>", ":noh<CR>")
